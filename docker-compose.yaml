@@ -10,7 +10,8 @@ services:
     tty: true
     volumes:
       - ../../:/workspace:cached
-      - ${HOME}/.ssh:/root/.ssh:cached
+      - ${HOME}/.gitconfigure:/tmp/.gitconfigure:ro
+      - ${HOME}/.ssh:/root/.ssh:ro
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - '3050-3099:3000-3049'
