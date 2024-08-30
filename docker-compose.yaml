@@ -1,0 +1,16 @@
+name: apps:checkout
+
+services:
+  checkout:
+    container_name: pj-esc-001831-apps-checkout
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    tty: true
+    volumes:
+      - ../../:/workspace:cached
+      - ${HOME}/.ssh:/root/.ssh:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - '3050-3099:3000-3049'
