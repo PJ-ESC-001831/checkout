@@ -1,5 +1,8 @@
 FROM node:22.6.0-bullseye-slim
 
+ARG DEV_USER=developer
+ENV DEV_USER=${DEV_USER}
+
 # Install git and other dependencies
 RUN apt-get update && \
   apt-get install -y \
@@ -11,6 +14,11 @@ RUN apt-get update && \
   lsb-release && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user and group
+RUN usermod -l ${DEV_USER} node \
+  && groupmod -n ${DEV_USER} node \
+  && usermod -d /home/${DEV_USER} -m ${DEV_USER}
 
 # Install Docker
 RUN mkdir -p /etc/apt/keyrings && \

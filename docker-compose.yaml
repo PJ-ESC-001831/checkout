@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - DEV_USER=developer
     restart: on-failure
     tty: true
     volumes:
