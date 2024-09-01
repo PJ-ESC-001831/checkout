@@ -37,4 +37,5 @@ COPY .devcontainer/.bashrc /root/.bashrc
 
 # Set the working directory
 SHELL ["/bin/bash", "-c"]
+USER ${DEV_USER}
 WORKDIR /workspace

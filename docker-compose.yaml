@@ -12,7 +12,7 @@ services:
     tty: true
     volumes:
       - ../../:/workspace:cached
-      - ${HOME}/.gitconfigure:/tmp/.gitconfigure:ro
+      - ${HOME}/.gitconfig:/tmp/.gitconfig:ro
       - ${HOME}/.ssh:/home/${DEV_USER:-developer}/.ssh
       - .devcontainer/.bashrc:/home/${DEV_USER:-developer}/.bashrc:ro
       - /var/run/docker.sock:/var/run/docker.sock
