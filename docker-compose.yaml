@@ -1,8 +1,8 @@
-name: apps:checkout
+name: checkout-app
 
 services:
   checkout:
-    container_name: pj-esc-001831-apps-checkout
+    container_name: pj-esc-001831-checkout-app
     build:
       context: .
       dockerfile: Dockerfile
