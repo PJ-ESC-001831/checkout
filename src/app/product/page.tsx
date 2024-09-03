@@ -27,7 +27,7 @@ export default async function Product() {
             description={product?.description ?? "Loading..."}
             title={product?.title ?? "Loading..."}
           />
-          <ProductForm />
+          <ProductForm variants={product.variants} />
           <button className="mt-4 rounded bg-blue-500 px-4 py-2 text-white">
             Checkout
           </button>
