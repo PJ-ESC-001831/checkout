@@ -11,8 +11,8 @@ export function ProductDescription({
 }) {
   return (
     <div className={`${className} w-full bg-white`}>
-      <h1 className="truncate text-lg font-semibold text-gray-800">{title}</h1>
-      <p className="mt-2 text-justify text-sm text-gray-600">{description}</p>
+      <h1 className="truncate text-2xl font-semibold text-gray-800">{title}</h1>
+      <p className="my-8 text-justify text-sm text-gray-600">{description}</p>
     </div>
   );
 }
