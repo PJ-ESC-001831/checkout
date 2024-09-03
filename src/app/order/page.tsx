@@ -1,7 +1,10 @@
+import { auth } from "@clerk/nextjs/server";
 import React from "react";
 import { HydrateClient } from "~/trpc/server";
 
 export default async function Order() {
+  const user = auth();
+  console.log({ user });
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center">
