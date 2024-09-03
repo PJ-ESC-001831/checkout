@@ -2,7 +2,6 @@
 
 import { HydrateClient } from "~/trpc/server";
 import Product from "./product/page";
-import { env } from "~/env";
 
 export default async function Home() {
   return (

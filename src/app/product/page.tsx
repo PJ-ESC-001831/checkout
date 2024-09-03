@@ -9,10 +9,6 @@ export default async function Product() {
     uuid,
   });
 
-  const onSubmit = async (variant: string) => {
-    console.log(`Selected variant: ${variant}`);
-  };
-
   const images = await api.product.getImages({ uuid });
 
   return (
