@@ -1,12 +1,14 @@
 "use client";
 
-export function ImageCarousel({ images }: { images: string[] }) {
+export function ImageCarousel({
+  images,
+  className,
+}: {
+  images: string[];
+  className?: string;
+}) {
   return (
-    <div
-      id="indicators-carousel"
-      className="relative w-full"
-      data-carousel="static"
-    >
+    <div id="indicators-carousel" className={className} data-carousel="static">
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         {
           // <!-- Carousel items -->

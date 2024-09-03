@@ -1,29 +1,31 @@
 // import Link from "next/link";
 
-import { api } from "~/trpc/react";
-import { HydrateClient } from "~/trpc/server";
+import { api, HydrateClient } from "~/trpc/server";
 import { ProductDescription } from "../_components/product/description";
-import { ImageCarousel } from "../_components/product/carousel";
 
 export default async function Product() {
-  const [product] = api.product.getById.useSuspenseQuery({
-    uuid: "6f8f0b0a-d5c2-4f0b-8c2e-8d9e3b5f8f2a",
+  const uuid = "6f8f0b0a-d5c2-4f0b-8c2e-8d9e3b5f8f2a";
+
+  const product = await api.product.getById({
+    uuid,
   });
+
+  const images = await api.product.getImages({ uuid });
 
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center md:flex-row">
         {/* Left Half: Latest Post */}
-        <ImageCarousel />
+        <div className="h-full w-full flex-col p-4 md:w-1/2">
+          <img src={images[0]} />
+        </div>
 
         {/* Right Half: Product Details */}
-        <div className="flex w-full flex-col items-start justify-start gap-4 p-4 md:w-1/2">
-          <h1 className="text-xl font-extrabold tracking-tight sm:text-[2rem]">
-            Product Title
-          </h1>
-          <ProductDescription>
-            {/* Assuming ProductDescription is a component that renders the product description */}
-          </ProductDescription>
+        <div className="w-full flex-col p-4 md:w-1/2">
+          <ProductDescription
+            description={product?.description ?? "Loading..."}
+            title={product?.title ?? "Loading..."}
+          />
           <div className="variant-selector w-full">
             <label
               htmlFor="variant"

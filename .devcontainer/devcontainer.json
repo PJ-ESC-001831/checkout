@@ -23,7 +23,8 @@
         "mhutchie.git-graph",
         "ms-azuretools.vscode-docker",
         "streetsidesoftware.code-spell-checker",
-        "vivaxy.vscode-conventional-commits"
+        "vivaxy.vscode-conventional-commits",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   },
