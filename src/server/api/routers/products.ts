@@ -19,6 +19,7 @@ export const productRouter = createTRPCRouter({
           such as Alexa, Google Home, and Apple HomeKit, ensuring a smooth and user-friendly experience.`,
         price: 10,
         uuid: input.uuid,
+        variants: ["Option 1", "Option 2", "Option 3"],
       };
     }),
   getImages: publicProcedure
