@@ -1,5 +1,3 @@
-// import Link from "next/link";
-
 import { api, HydrateClient } from "~/trpc/server";
 import { ProductDescription } from "../_components/product/description";
 import { ProductForm } from "../_components/product/form";
@@ -10,6 +8,10 @@ export default async function Product() {
   const product = await api.product.getById({
     uuid,
   });
+
+  const onSubmit = async (variant: string) => {
+    console.log(`Selected variant: ${variant}`);
+  };
 
   const images = await api.product.getImages({ uuid });
 
@@ -28,9 +30,6 @@ export default async function Product() {
             title={product?.title ?? "Loading..."}
           />
           <ProductForm variants={product.variants} />
-          <button className="mt-4 rounded bg-blue-500 px-4 py-2 text-white">
-            Checkout
-          </button>
         </div>
       </main>
     </HydrateClient>
