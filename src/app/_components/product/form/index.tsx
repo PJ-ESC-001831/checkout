@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 export function ProductForm({
   label = "Choose a variant",
   variants = [],
@@ -11,8 +9,6 @@ export function ProductForm({
   variants?: string[];
   className?: string;
 }) {
-  const [variant, setVariant] = useState<string>("");
-
   // There are no variants to choose from for this product
   if (variants.length === 0) {
     return;
@@ -21,9 +17,10 @@ export function ProductForm({
   return (
     <div className={`${className} variant-selector w-full`}>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log(`Selected variant: ${variant}`);
+        action={(e) => {
+          console.log({
+            variant: e.get("variant"),
+          });
         }}
       >
         <label
@@ -35,7 +32,6 @@ export function ProductForm({
         <select
           id="variant"
           name="variant"
-          onChange={(e) => setVariant(e.target.value)}
           className="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
           defaultValue=""
         >
