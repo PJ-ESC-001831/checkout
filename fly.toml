@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for co-maker on 2024-09-04T17:47:20Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'co-maker'
+primary_region = 'jnb'
+
+[build]
+  build-target = "app"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

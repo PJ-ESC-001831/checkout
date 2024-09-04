@@ -137,5 +137,8 @@ for dir in "$PARENT_DIR"/*; do
   fi
 done
 
+export FLYCTL_INSTALL="/home/developer/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
 # Source custom development configuration
 source /workspace/dev.rc

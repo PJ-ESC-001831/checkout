@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: dev
       args:
         - DEV_USER=${DEV_USER:-developer}
     restart: on-failure
