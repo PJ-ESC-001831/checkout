@@ -19,7 +19,17 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
         <body>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            <header className="flex w-full items-center justify-between p-4 text-white">
+              <div className="flex items-center">
+                <img src="/logo.svg" alt="Logo" className="mr-2 h-8 w-8" />
+                <span className="text-xl font-bold text-gray-800">
+                  co-maker
+                </span>
+              </div>
+            </header>
+            {children}
+          </TRPCReactProvider>
         </body>
       </html>
     </ClerkProvider>
