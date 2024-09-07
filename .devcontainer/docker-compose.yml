@@ -12,6 +12,7 @@ services:
     environment:
       - UID=${UID}
       - GID=${GID}
+      - NODE_ENV=development
       
     user: "${UID}:${GID}"
 

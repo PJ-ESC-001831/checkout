@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -17,12 +18,22 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
+      <html
+        lang="en"
+        className={`${GeistSans.variable}`}
+        style={{ overflow: "hidden" }}
+      >
         <body>
           <TRPCReactProvider>
             <header className="flex w-full items-center justify-between p-4 text-white">
               <div className="flex items-center">
-                <img src="/logo.svg" alt="Logo" className="mr-2 h-8 w-8" />
+                <Image
+                  src="/logo.svg"
+                  alt="Logo"
+                  width={32}
+                  height={32}
+                  className="mr-2 h-8 w-8"
+                />
                 <span className="text-2xl font-bold text-gray-800">
                   co-maker
                 </span>
