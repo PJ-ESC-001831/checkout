@@ -13,9 +13,9 @@ export default async function Product() {
 
   return (
     <HydrateClient>
-      <main className="items-top flex min-h-screen flex-col justify-center p-6 md:flex-row md:p-12">
+      <main className="items-top flex min-h-screen flex-col justify-center p-12 md:flex-row">
         {/* Left Half: Latest Post */}
-        <div className="h-full w-full flex-col p-4 md:w-1/2">
+        <div className="mb-64 h-full w-full flex-col p-4 md:w-1/2">
           <img src={images[0]} />
         </div>
 

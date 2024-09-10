@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 export function ProductForm({
   label = "Choose a variant",
   variants = [],
@@ -11,8 +13,10 @@ export function ProductForm({
 }) {
   // There are no variants to choose from for this product
   if (variants.length === 0) {
-    return;
+    return null;
   }
+
+  const router = useRouter();
 
   return (
     <div className={`${className} variant-selector w-full`}>
@@ -21,6 +25,7 @@ export function ProductForm({
           console.log({
             variant: e.get("variant"),
           });
+          router.push("/order");
         }}
       >
         <label
