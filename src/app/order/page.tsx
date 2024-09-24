@@ -13,11 +13,11 @@ export default async function Order() {
       iat: 1725971648,
       iss: 'https://moving-lynx-47.clerk.accounts.dev',
       nbf: 1725971638,
-      sid: 'sess_2lsbHtID1AjoVLjzC0fXwTlEwU4',
-      sub: 'user_2lZWBmmo7G6mP7yFSIfIaQAbTVS'
+      sid: 'sess_XXXX0',
+      sub: 'user_XXXX0'
     },
-    sessionId: 'sess_2lsbHtID1AjoVLjzC0fXwTlEwU4',
-    userId: 'user_2lZWBmmo7G6mP7yFSIfIaQAbTVS',
+    sessionId: 'sess_XXXX0',
+    userId: 'user_XXXXX0',
     orgId: undefined,
     orgRole: undefined,
     orgSlug: undefined,
